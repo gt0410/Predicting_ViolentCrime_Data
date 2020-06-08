@@ -74,8 +74,17 @@ In this project *cv.glmnet* is used to tune the data for best lambda. Ridge regr
 
 In this project *cv.glmnet* is used to tune the data for best lambda value for Lasso. Lasso regression model with the best have the RMSE value *0.12144* on the test data in Kaggle.
 
-**3. Elastic Net Regression :**
+**3. Elastic Net Regression :** Elastic net is a combination of both L1 and L2 regularization. Elastic Net balances between the Lasso and Ridge regression models. Elastic Net has two hyperparameters alpha and lambda. For Ridge regression, alpha = 0 and alpha = 1 for lasso regression. 
 
+In this project, hyperparameters are tuned using *Caret* package. Optimal values of alpha and lambda are calculated using 10 fold Cross-Validation to have minimum *RMSE* value on validation data. Elastic Net model have the RMSE value *0.11332* on the test data in Kaggle.
+
+**4. Support Vector Regression :** Support Vector Machines (SVM) are popularly and widely used for classification problems in machine learning. Support Vector Regression (SVR) uses the same principle as SVM, but for regression problems. SVR builds the hyperplane that best fits the model. The hyperparameters in SVR are cost function, and kernel. Different types of kernels like linear kernel, polynomial kernel, radial basis function (RBF), etc. can be selected based on the distribuiton of data.
+
+The hyperparameters used in this project are tuned using *Caret* package. Support Vector model have the RMSE value *0.12881* on the test data in Kaggle.
+
+**Elastic Net regression model performed best on this dataset compared to other linear models.**
+
+-----
 The below funcion is used to find the percent of missing values in all features.
  
 ```
