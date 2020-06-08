@@ -36,7 +36,7 @@ A limitation was that the LEMAS survey was of the police departments with at lea
 Exploratory Data Analysis details
 ----
 
-*Target variable* doesn't seem to be affected by county. So Country is removed.
+*Target variable* doesn't seem to be affected by *county*. So Country is removed.
 
 *Communityname* has 1135 unique values. So, can be removed.
 
