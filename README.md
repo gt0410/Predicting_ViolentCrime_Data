@@ -30,3 +30,12 @@ The normalization preserves rough ratios of values WITHIN an attribute (e.g. dou
 However, the normalization does not preserve relationships between values BETWEEN attributes (e.g. it would not be meaningful to compare the value for whitePerCap with the value for blackPerCap for a community)
 
 A limitation was that the LEMAS survey was of the police departments with at least 100 officers, plus a random sample of smaller departments. For our purposes, communities not found in both census and crime datasets were omitted. Many communities are missing LEMAS data.
+
+
+-----
+Exploratory Data Analysis details
+----
+
+"Target variable" doesn't seem to be affected by county. So Country is removed.
+
+“Communityname” has 1135 unique values. So, can be removed.
