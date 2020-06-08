@@ -36,6 +36,14 @@ A limitation was that the LEMAS survey was of the police departments with at lea
 Exploratory Data Analysis details
 ----
 
-"Target variable" doesn't seem to be affected by county. So Country is removed.
+*Target variable* doesn't seem to be affected by county. So Country is removed.
 
-“Communityname” has 1135 unique values. So, can be removed.
+*Communityname* has 1135 unique values. So, can be removed.
+
+*OtherPerCap* has one missing value which is replaced with mode value.
+
+Predictors with Police information has 84.33% missing values. Also, there is other information related to Police, So, these field are removed.
+
+*Householdsize* and *PersPerOccupHous* features mean the same and have same values. So, I removed householdsize.
+
+Features with skewness are transformed using symbox transformations.
