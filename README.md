@@ -62,3 +62,11 @@ Features that are skewed are transformed using symbox transformations.
 -----
 Predictive Modeling
 ----
+
+
+The below funcion is used to find the percent of missing values in all features.
+
+'''
+myfun<-function(x) mean(is.na(x))
+apply(crimeTrain,2,myfun)
+'''
