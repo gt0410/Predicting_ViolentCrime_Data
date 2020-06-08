@@ -14,7 +14,7 @@ Packages required for the project : tidyverse, dplyr, caret, Amelia, MASS, corrp
 -----
 Data Overview
 ----
-The data combines data from a variety of sources to include socio-economic data, law enforcement data, and crime data. There are 1,200 observations of 117 possible predictors and 1 target variable (ViolentCrimesPerPop) -- each variable is described below (under Data Fields). Most of the data is numeric. There are several missing values in some variables.
+The data combines data from a variety of sources to include socio-economic data, law enforcement data, and crime data. There are 1,200 observations of 117 possible predictors and 1 target variable (ViolentCrimesPerPop) -- each variable is described in [Kaggle](https://www.kaggle.com/c/5103-ida-hm6-2018/data). Most of the data is numeric. There are several missing values in some variables.
 
 -----
 Data Details
@@ -66,8 +66,18 @@ Predictive Modeling
 
 PLS is implemented using PLS method in *Caret* package with 10 fold cross validation. From the summary of the fitted model, 7 components are explaining most of the data. The final model is built with 7 components and hyperparameters are tuned to get the minimum *RMSE* on validation data. PLS model have the RMSE value *0.12361* on the test data in Kaggle.
 
+**2. Ridge Regression :** Ridge regression uses L2 regularization technique that reduces the model complexity by coefficient shrinkage. This helps to prevent multicollinearity between the features. Ridge model tries to make the coefficients of mode small by penalizing the ones that have large coefficients.
+
+In this project *cv.glmnet* is used to tune the data for best lambda. Ridge regression model with the best lambda performed better than the PLS model. Ridge model have the RMSE value *0.12135* on the test data in Kaggle.
+
+**3. Lasso Regression :** LASSO (Least Absolute Shrinkage Selector Operator) uses L1 regularization technique that helps the model to automatically do the feature selection. LASSo tries to make the coefficents of features as small (zero) as possible. 
+
+In this project *cv.glmnet* is used to tune the data for best lambda value for Lasso. Lasso regression model with the best have the RMSE value *0.12144* on the test data in Kaggle.
+
+**3. Elastic Net Regression :**
+
 The below funcion is used to find the percent of missing values in all features.
-  
+ 
 ```
 myfun <- function(x) mean(is.na(x))
 apply(crimeTrain,2,myfun)
