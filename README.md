@@ -46,4 +46,4 @@ Predictors with Police information has 84.33% missing values. Also, there is oth
 
 *Householdsize* and *PersPerOccupHous* features mean the same and have same values. So, I removed householdsize.
 
-Features with skewness are transformed using symbox transformations.
+Features that are skewed are transformed using symbox transformations.
