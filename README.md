@@ -47,3 +47,18 @@ Predictors with Police information has 84.33% missing values. Also, there is oth
 *Householdsize* and *PersPerOccupHous* features mean the same and have same values. So, I removed householdsize.
 
 Features that are skewed are transformed using symbox transformations.
+
+#### Observations from the Correlation Plot.
+1. age12t21 and age12t29 have correlation. This may be due to overlapping in data. So, we,ll make age12t29 to age21t29
+2. age65up and pctWSocSec are highly correlated and pctWSocSec is more related to ViolentCrimesPerPop. So, we'll remove age65up to avoid overfitting.
+3. perCapInc and whitePerCap are highly correlated and seems to be similarly correlated with other variables. 
+4. PctBSorMore and PctOccupMgmtProf are highly correlated and PctOccupMgmtProf seems to be more related to other variables. So, we'll remove PctBSorMore. 
+5. PctFam2Par and PctYoungKids2Par are highly correlated. PctYoungKids2Par is removed to avoid multicollinearity.
+6. PctPersOwnOccup and PctHousOwnOcc are highly correlated and are similarly related to other variables. So, we'll remove PctPersOwnOccup
+7. PctRecentImmig and PctForeignBorn are highly correlated. PctForeignBorn is removed to avoid multicollinearity.
+8. OwnOccMedVal and RentMedian are highly correlated. OwnOccMedVal is removed to avoid multicollinearity.
+9. Also, other variables having correlation with ViolentCrimesPerPop are racepctblack, racepctwhite,pctWInvInc, pctWPubAsst,PctPopUnderPov, PctUnemployed,PctFam2Par, PersPerOwnOccHous, HousVacant.
+
+-----
+Predictive Modeling
+----
