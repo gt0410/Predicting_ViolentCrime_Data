@@ -1,5 +1,5 @@
 # Predicting_ViolentCrime_Data
-Exploratory Data Analysis and Feature Engineering on Violent Crime dataset from Kaggle and performing regression analysis to predict the crime rate per 100k population. This project compared the performances if Linear Regression, PLS, regularized models like Ridge regression, LASSO and ElasticNet, and SVM regression models.
+Exploratory Data Analysis and Feature Engineering on Violent Crime dataset from Kaggle and performing regression analysis to predict the crime rate per 100k population. This project compared the performances if Linear Regression, PLS, regularized models like Ridge regression, LASSO and ElasticNet, SVM regression, and Neural Network models.
 
 -------------
 Author 
@@ -9,7 +9,7 @@ Author
 
 Contact: gteja0410@gmail.com
 
-Packages required for the project : tidyverse,Amelia,caret,MASS,corrplot,psych,corrgram,mlbench,e1071,car,pls,glmnet,elasticnet,xgboost
+Packages required for the project : tidyverse, dplyr, caret, Amelia, MASS, corrplot, corrgram, mlbench, e1071, car, pls, glmnet, elasticnet, nnet
 
 -----
 Data Overview
@@ -62,11 +62,13 @@ Features that are skewed are transformed using symbox transformations.
 -----
 Predictive Modeling
 ----
+**1. PLS :** Partial least squares (PLS) regression is a technique that reduces the predictors to a smaller set of uncorrelated components and performs least squares regression on these components, instead of on the original data. Since, the data we have have some features that are colinear, PLS method is first implemented inthis project. 
 
+PLS is implemented using PLS method in *Caret* package with 10 fold cross validation. From the summary of the fitted model, 7 components are explaining most of the data. The final model is built with 7 components and hyperparameters are tuned to get the minimum *RMSE* on validation data. PLS model have the RMSE value *0.12361* on the test data in Kaggle.
 
 The below funcion is used to find the percent of missing values in all features.
-
+  
 ```
-myfun<-function(x) mean(is.na(x))
+myfun <- function(x) mean(is.na(x))
 apply(crimeTrain,2,myfun)
 ```
