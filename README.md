@@ -12,6 +12,11 @@ Contact: gteja0410@gmail.com
 Packages required for the project : tidyverse,Amelia,caret,MASS,corrplot,psych,corrgram,mlbench,e1071,car,pls,glmnet,elasticnet,xgboost
 
 -----
+Data Overview
+----
+The data combines data from a variety of sources to include socio-economic data, law enforcement data, and crime data. There are 1,200 observations of 117 possible predictors and 1 target variable (ViolentCrimesPerPop) -- each variable is described below (under Data Fields). Most of the data is numeric. There are several missing values in some variables.
+
+-----
 Data Details
 ----
 The variables included in the dataset involve the community, such as the percent of the population considered urban, and the median family income, and involving law enforcement, such as per capita number of police officers, and percent of sworn full time police officers on patrol.
